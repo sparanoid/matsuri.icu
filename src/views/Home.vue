@@ -72,7 +72,7 @@ export default {
         if (this.channel_list === null)
             this.$parent.loading = true;
         this.$http
-        .get('https://api.matsuri.icu/channel')
+        .get(process.env.VUE_APP_API_BASE + '/channel')
         .then(function (response) {
             if (response.data.status === 0) {
                 this.channel_data = response.data.data;
